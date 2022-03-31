@@ -63,3 +63,27 @@ export default {
 }
 };
 </script>
+
+<style>
+div#articlesparent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 2em;
+    width: 100%;
+    margin-top: 2em;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+}
+
+div.card img{
+    object-fit: cover;
+}
+
+div.card{
+    width: 20rem !important;
+    height: 35rem;
+    border-bottom: solid #41B883 .3em;
+}
+</style>
