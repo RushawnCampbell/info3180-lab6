@@ -11,7 +11,7 @@
  
 <div id="articlesparent">
     <div v-for= "article in articles" class="card" style="width: 18rem;">
-        <img class="card-img-top" v-bind:src=article.urlToImage alt="No image available">
+        <img class="card-img-top" v-bind:src=article.urlToImage v-bind:alt=article.title>
         <div class="card-body">
             <h5 class="card-title">{{ article.title }}</h5>
             <p class="card-text">{{article.description}}</p>
@@ -32,7 +32,7 @@ export default {
     let self = this;
         fetch('https://newsapi.org/v2/everything?q='+self.searchTerm + '&language=en', {
         headers: {
-        'Authorization': `Bearer 85c0b0940af649688c9dc2455f8ee68e`,
+        'Authorization': `Bearer ${import.meta.env.VITE_NEWSAPI_TOKEN}`,
         }
         })
         .then(function(response) {
@@ -50,7 +50,7 @@ export default {
     fetch('https://newsapi.org/v2/top-headlines?country=us',
     {
         headers: {
-            'Authorization': `Bearer 85c0b0940af649688c9dc2455f8ee68e`
+            'Authorization': `Bearer ${import.meta.env.VITE_NEWSAPI_TOKEN}`
         }
     })
     .then(function(response) {
@@ -79,6 +79,7 @@ div#articlesparent{
 
 div.card img{
     object-fit: cover;
+    height: 10rem;
 }
 
 div.card{

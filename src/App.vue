@@ -2,6 +2,8 @@
 import { RouterLink, RouterView } from 'vue-router'
 import AppHeader from "@/components/AppHeader.vue";
 import AppFooter from "@/components/AppFooter.vue";
+import.meta.env.VITE_NEWSAPI_TOKEN;
+
 </script>
 
 <template>
